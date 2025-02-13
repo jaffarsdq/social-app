@@ -7,6 +7,14 @@ interface PrivateRouteProps {
 
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ element }) => {
     const { user } = useAuth();
+    const justSignedUp = localStorage.getItem('justSignedUp') === 'true';
+
+    if (justSignedUp) {
+        // Remove the flag after redirecting
+        localStorage.removeItem('justSignedUp');
+        return element;
+    }
+
     return user ? element : <Navigate to='/login' />;
 };
 
