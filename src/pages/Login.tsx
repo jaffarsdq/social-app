@@ -33,14 +33,15 @@ const Login = () => {
                 {backgroundImages.map((column, colIndex) => (
                     <motion.div
                         key={colIndex}
-                        className='relative w-full h-[200vh] flex flex-col'
+                        className='relative w-full h-[100vh] flex flex-col'
                         initial={{ y: 0 }}
                         animate={{ y: '-100%' }}
                         transition={{
-                            delay: colIndex * 1.5, // More spacing between staggered columns
-                            duration: 50, // Smooth slow transition
+                            delay: colIndex * 3.3, // More spacing between staggered columns
+                            // duration: 33, // Smooth slow transition
+                            duration: 67,
                             repeat: Infinity,
-                            ease: 'linear', // Constant speed
+                            ease: 'easeInOut', // Constant speed
                             repeatType: 'mirror', // Avoid abrupt jumps
                         }}
                     >
